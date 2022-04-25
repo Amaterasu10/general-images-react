@@ -3,7 +3,11 @@
 @tailwind utilities;
 
 @layer components {
+  .navbar-list {
+    @apply p-3 px-6 inline-block;
+  }
+
   .navbar-icon {
-    @apply p-3 px-6 inline-block hover:text-gray-200 cursor-pointer;
+    @apply hover:text-gray-200 cursor-pointer;
   }
 }
