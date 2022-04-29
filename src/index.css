@@ -10,4 +10,8 @@
   .navbar-icon {
     @apply hover:text-gray-200 cursor-pointer;
   }
+
+  .search-form {
+    @apply p-2 w-full flex max-w-lg  lg:max-w-2xl;
+  }
 }
