@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function Contact() {
   return (
-    <div>Contact</div>
+    <div className='landing-screen'>
+      Contact
+    </div>
   )
 }

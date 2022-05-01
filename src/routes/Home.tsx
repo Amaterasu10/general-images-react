@@ -17,7 +17,7 @@ export default function Home() {
     
   return (
     <div id="home">
-      <section className='grid place-items-center h-[calc(100vh-48px)] p-3'>
+      <section className='landing-screen'>
         <div className='w-full grid place-items-center'>
         <h1 className='text-3xl md:text-5xl '>General Images</h1>
         <form 

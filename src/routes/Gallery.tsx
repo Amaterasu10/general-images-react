@@ -6,7 +6,7 @@ export default function Images() {
   const {searchInput} = useParams();
   console.log(JSON.stringify(searchInput))
   return (
-    <section className='grid place-items-center h-[calc(100vh-48px)] p-3'>
+    <section className='landing-screen'>
       images
       {JSON.stringify(searchInput)}
     </section>
