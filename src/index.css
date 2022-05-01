@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer components {
+  .landing-screen {
+    @apply grid place-items-center h-[calc(100vh-48px)] p-3;
+  }
   .navbar-list {
     @apply p-3 px-6 inline-block;
   }
