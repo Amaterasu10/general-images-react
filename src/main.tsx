@@ -10,6 +10,7 @@ import Home from './routes/Home'
 import Contact from './routes/Contact'
 import About from './routes/About';
 import NoMatch from './routes/NoMatch';
+import Gallery from './routes/Gallery';
 
 import App from './App'
 
@@ -24,6 +25,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route index element={<Home/>} />
         <Route path='contact' element={<Contact/>} />
         <Route path='about' element={<About/>} />
+        <Route path='gallery/:searchInput' element={<Gallery/>} />
         <Route path='*' element={<NoMatch/>} />
       </Route>
     </Routes>
