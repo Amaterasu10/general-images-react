@@ -12,7 +12,7 @@ interface TopNavProps {
 
 export default function TopNav ({className}:TopNavProps) {
   return (
-    <nav className='bg-emerald-500' >
+    <nav>
       <ul className='flex ml-auto mr-4 w-fit'>
         <li className='navbar-list'> 
           <Link to="/">
