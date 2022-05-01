@@ -1,12 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-interface TopNavProps {
-  className?: string,
-  icon?: IconType
-}
-
-export default function TopNav ({className}:TopNavProps) {
+export default function TopNav () {
   return (
     <nav>
       <ul className='flex ml-auto mr-4 w-fit'>
