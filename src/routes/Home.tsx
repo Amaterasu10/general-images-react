@@ -15,7 +15,7 @@ export default function Home() {
     event.preventDefault();
     navigate(`/gallery/${searchInput}`);
   }
-    
+  console.log(import.meta.env.VITE_APP_TITLE)
   return (
     <div id="home">
       <section className='landing-screen'>
@@ -38,12 +38,9 @@ export default function Home() {
             className='w-full p-3 focus-visible:outline-0 bg-transparent rounded-full focus-within:bg-slate-200 pl-5'
             onChange={(e)=>onChange(e)}
           />
-          {
-            
-            <button type="submit" className='p-2'>
+          <button type="submit" className='p-2'>
             <FaRandom size="1.2em"/>
-            </button>
-          }
+          </button>
         </form>
         </div>
       </section>
