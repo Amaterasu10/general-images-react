@@ -35,7 +35,7 @@ export default function Images() {
     <section className='landing-screen'>
       <div 
       className={
-        images.length && `grid place-items-center place-content-center grid-flow-row md:grid-cols-3`
+        images.length && `grid sm:grid-cols-masonry sm:grid-rows-masonry`
       }
 
       >
@@ -50,7 +50,7 @@ export default function Images() {
               <div 
                 key={image?.id} 
                 className={
-                  `shadow-lg p-3 m-5 ${image.width > image.height ? "horizontal": "vertical"}`
+                  `shadow-lg p-3 m-5 ${image.width > image.height ? "col-span-3 row-span-2" : "col-span-3 row-span-4"}`
                 }  
               >
                 <img 
