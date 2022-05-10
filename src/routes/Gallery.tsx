@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 export default function Images() {
   const {searchInput} = useParams();
   const [images, setImages] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(()=> {
     axios.get('https://api.unsplash.com/search/', {
@@ -16,6 +17,7 @@ export default function Images() {
     .then( response => {
       // handle success
       setImages(response.data.photos.results)
+      setIsLoading(false);
       console.log(response.data.photos.results);
       // console.log(images, 1)
     })
@@ -37,10 +39,9 @@ export default function Images() {
       }
 
       >
-
-        { 
-          !images.length &&
-          <p className='text-center'>{`No search result for "${searchInput}"`}</p>
+        {
+          isLoading && 
+          <p>Loading...</p>
         }
         { 
           images.length > 0 &&
@@ -61,6 +62,11 @@ export default function Images() {
               </div>
             )
           })
+        }
+
+        { 
+          !isLoading && !images.length &&
+          <p className='text-center'>{`No search result for "${searchInput}`}</p>
         }
       </div>
     </section>
