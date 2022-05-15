@@ -4,21 +4,24 @@ import { useParams } from 'react-router-dom'
 
 export default function Images() {
   const {searchInput} = useParams();
+  const [page, setPage] = useState(1);
   const [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(()=> {
+  const fetchData = (page=1) => {
     axios.get('https://api.unsplash.com/search/', {
       params: {
         query: searchInput,
-        client_id: import.meta.env.VITE_UNSPLASH_ACCESS_KEY
+        client_id: import.meta.env.VITE_UNSPLASH_ACCESS_KEY,
+        page: page
       }
     })
     .then( response => {
       // handle success
-      setImages(response.data.photos.results)
+      setImages(response.data.photos.results);
+      setPage(page => page += 1 );
       setIsLoading(false);
-      console.log(response.data.photos.results);
+      console.log(response);
       // console.log(images, 1)
     })
     .catch( error => {
@@ -28,6 +31,11 @@ export default function Images() {
     .then( () => {
       // always executed
     });
+  }
+
+  useEffect(()=> {
+    fetchData();
+    
   },[searchInput])
 
 
