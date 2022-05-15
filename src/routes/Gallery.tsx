@@ -33,7 +33,7 @@ export default function Images() {
 
   return (
     <>
-      <section className='landing-screen'>
+      <section className='landing-screen bg-slate-100'>
         <div 
         className={
           images.length && `grid sm:grid-cols-masonry sm:grid-rows-masonry`
