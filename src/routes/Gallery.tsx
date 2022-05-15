@@ -36,7 +36,7 @@ export default function Images() {
   useEffect(()=> {
     fetchData();
     
-  },[searchInput, page])
+  },[searchInput])
 
 
   return (
