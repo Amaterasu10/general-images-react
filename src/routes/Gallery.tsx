@@ -36,9 +36,7 @@ export default function Images() {
       <div 
       className={
         images.length && `grid sm:grid-cols-masonry sm:grid-rows-masonry`
-      }
-
-      >
+      }>
         {
           isLoading && 
           <p>Loading...</p>
@@ -50,15 +48,18 @@ export default function Images() {
               <div 
                 key={image?.id} 
                 className={
-                  `shadow-lg p-3 m-5 ${image.width > image.height ? "col-span-3 row-span-2" : "col-span-3 row-span-4"}`
+                  `shadow-2xl bg-slate-100 p-3 m-5 grid place-content-center place-items-center ${image.width > image.height ? "col-span-3 row-span-2" : "col-span-3 row-span-4"}`
                 }  
               >
                 <img 
                   src={image?.urls.small_s3} 
-                  alt={image?.alt_description} 
+                  alt={image?.alt_description}
+                  height={image?.height}
+                  width={image.width} 
+                  loading="lazy"
                   className="max-w-full h-auto align-middle inline-block"
                 />
-                <p>{image.alt_description}</p>
+                {/* <p>{image.alt_description}</p> */}
               </div>
             )
           })
