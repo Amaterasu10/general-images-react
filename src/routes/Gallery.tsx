@@ -71,6 +71,8 @@ export default function Images() {
             <p className='text-center'>{`No search result for "${searchInput}`}</p>
           }
         </div>
+
+        <button className='m-auto block bg-stone-900 text-white px-5 py-3 rounded-full shadow-2xl mb-5'>More</button>
       </section>
     </>
   )
