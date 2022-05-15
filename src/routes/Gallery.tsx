@@ -18,8 +18,8 @@ export default function Images() {
     })
     .then( response => {
       // handle success
-      setImages(response.data.photos.results);
-      setPage(page => page += 1 );
+      setImages([...images,...response.data.photos.results]);
+      setPage(page + 1);
       setIsLoading(false);
       console.log(response);
       // console.log(images, 1)
@@ -36,7 +36,7 @@ export default function Images() {
   useEffect(()=> {
     fetchData();
     
-  },[searchInput])
+  },[searchInput, page])
 
 
   return (
@@ -80,7 +80,7 @@ export default function Images() {
           }
         </div>
 
-        <button className='m-auto block bg-stone-900 text-white px-5 py-3 rounded-full shadow-2xl mb-5'>More</button>
+        <button onClick={()=> fetchData(page) } className='m-auto block bg-stone-900 text-white px-5 py-3 rounded-full shadow-2xl mb-5'>More {page}</button>
       </section>
     </>
   )
