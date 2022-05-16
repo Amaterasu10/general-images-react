@@ -15,7 +15,7 @@ export default function Home() {
     event.preventDefault();
     navigate(`/gallery/${searchInput}`);
   }
-  console.log(import.meta.env.VITE_UNSPLASH_SECRET_KEY)
+  
   return (
     <div id="home">
       <section className='landing-screen'>
